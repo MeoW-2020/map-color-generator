@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://brofist.io/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Map Color Generator - Brofist.io</title>
+</head>
+
+<body>
+
+    <div class="one">
+        <div class="two">
+            <p id="num-h">200</p>
+            <div class="range-container">
+                <label for="rng-h">Оттенок: </label>
+                <input type="range" min="0" max="360" value="200" step="1" class="rng" id="rng-h" />
+            </div>
+            <p id="num-s">40</p>
+            <div class="range-container">
+                <label for="rng-h">Насыщенность: </label>
+                <input type="range" min="0" max="100" value="40" step="1" class="rng" id="rng-s" />
+            </div>
+            <p id="num-l">91</p>
+            <div class="range-container">
+                <label for="rng-h">Яркость: </label>
+                <input type="range" min="0" max="100" value="91" step="1" class="rng" id="rng-l" />
+            </div>
+            <div class="negre">
+                <div class="n-head"></div>
+                <div class="n-body"></div>
+            </div>
+            <div class="spike-container">
+                <div class="spike"></div>
+                <div class="spike"></div>
+                <div class="spike"></div>
+                <div class="empty-spike"></div>
+                <div class="spike"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var rng = document.getElementsByClassName('rng');
+        var rngH = document.getElementById('rng-h');
+        var rngS = document.getElementById('rng-s');
+        var rngL = document.getElementById('rng-l');
+
+        var numH = document.getElementById('num-h');
+        var numS = document.getElementById('num-s');
+        var numL = document.getElementById('num-l');
+
+
+        rngH.onchange = rngH.oninput = function () {
+            document.documentElement.style.setProperty('--hue', this.value);
+            document.documentElement.style.setProperty('--hue-secondary', this.value - 3);
+            numH.innerHTML = rngH.value;
+        }
+        rngS.onchange = rngS.oninput = function () {
+            document.documentElement.style.setProperty('--s', this.value + "%");
+            document.documentElement.style.setProperty('--s-secondary', (this.value - 27) + "%");
+            numS.innerHTML = rngS.value;
+        }
+        rngL.onchange = rngL.oninput = function () {
+            document.documentElement.style.setProperty('--l', this.value + "%");
+            document.documentElement.style.setProperty('--l-secondary', (this.value - 46) + "%");
+            numL.innerHTML = rngL.value;
+
+            if (this.value < 50) {
+                document.documentElement.style.setProperty('--text-color', '#ffffff');
+            } else {
+                document.documentElement.style.setProperty('--text-color', '#000000');
+            }
+        }
+
+    </script>
+</body>
+
+</html>
