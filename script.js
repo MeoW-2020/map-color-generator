@@ -8,7 +8,7 @@ var numS = document.getElementById('num-s');
 var numL = document.getElementById('num-l');
 
 
-rngH.onchange = rngH.oninput = function () {
+rngH.onchange = function () {
     document.documentElement.style.setProperty('--hue', this.value);
     document.documentElement.style.setProperty('--hue-secondary', this.value - 3);
     numH.innerHTML = rngH.value;
