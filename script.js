@@ -13,12 +13,12 @@ rngH.onchange = function () {
     document.documentElement.style.setProperty('--hue-secondary', this.value - 3);
     numH.innerHTML = rngH.value;
 }
-rngS.onchange = rngS.oninput = function () {
+rngS.onchange = function () {
     document.documentElement.style.setProperty('--s', this.value + "%");
     document.documentElement.style.setProperty('--s-secondary', (this.value - 27) + "%");
     numS.innerHTML = rngS.value;
 }
-rngL.onchange = rngL.oninput = function () {
+rngL.onchange = function () {
     document.documentElement.style.setProperty('--l', this.value + "%");
     document.documentElement.style.setProperty('--l-secondary', (this.value - 46) + "%");
     numL.innerHTML = rngL.value;
