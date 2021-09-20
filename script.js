@@ -1,4 +1,3 @@
-var rng = document.getElementsByClassName('rng');
 var rngH = document.getElementById('rng-h');
 var rngS = document.getElementById('rng-s');
 var rngL = document.getElementById('rng-l');
