@@ -7,17 +7,17 @@ var numS = document.getElementById('num-s');
 var numL = document.getElementById('num-l');
 
 
-rngH.onchange = function () {
+rngH.onchange = rngH.oninput = function () {
     document.documentElement.style.setProperty('--hue', this.value);
     document.documentElement.style.setProperty('--hue-secondary', this.value - 3);
     numH.innerHTML = rngH.value;
 }
-rngS.onchange = function () {
+rngS.onchange = rngH.oninput = function () {
     document.documentElement.style.setProperty('--s', this.value + "%");
     document.documentElement.style.setProperty('--s-secondary', (this.value - 27) + "%");
     numS.innerHTML = rngS.value;
 }
-rngL.onchange = function () {
+rngL.onchange = rngH.oninput = function () {
     document.documentElement.style.setProperty('--l', this.value + "%");
     document.documentElement.style.setProperty('--l-secondary', (this.value - 46) + "%");
     numL.innerHTML = rngL.value;
